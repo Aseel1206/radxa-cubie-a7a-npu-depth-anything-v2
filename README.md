@@ -81,10 +81,20 @@ These are not specific to this model, so if you convert something else you will 
 
 [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2) (Yang et al.), ONNX export by onnx-community. Sample photos from MediaPipe's test assets.
 
+## Use it from Python
+
+There is now a pip-installable Python wrapper for the NPU, [cubie-npu](https://github.com/Aseel1206/cubie-npu) (not on PyPI yet, install it with `pip install git+https://github.com/Aseel1206/cubie-npu`). With it you can skip the C++ tools above:
+
+```python
+from cubie_npu import Model
+depth = Model("da_small_int8pcq.nb")(rgb_252x336_uint8)[0]      # (252, 336) relative inverse depth, float32
+```
+
 ## More models on the Cubie A7A NPU
 
 Same board, same toolchain, same kind of notes:
 
+- [cubie-npu](https://github.com/Aseel1206/cubie-npu): Python bindings for the NPU
 - [radxa-cubie-a7a-npu-mediapipe-hands](https://github.com/Aseel1206/radxa-cubie-a7a-npu-mediapipe-hands): MediaPipe palm detector + hand landmarks (int8, ~5 ms total)
 - [radxa-cubie-a7a-npu-blazeface](https://github.com/Aseel1206/radxa-cubie-a7a-npu-blazeface): MediaPipe BlazeFace face detector (~1 ms)
 - [radxa-cubie-a7a-npu-deit-tiny](https://github.com/Aseel1206/radxa-cubie-a7a-npu-deit-tiny): DeiT-tiny vision transformer (14.5 ms int8)
