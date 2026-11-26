@@ -1,0 +1,28 @@
+{
+    "Inputs": {
+        "pixel_values_647_0": {
+            "name": "pixel_values_0",
+            "shape": [
+                1,
+                252,
+                336,
+                3
+            ],
+            "format": "nchw",
+            "dtype": "uint8"
+        }
+    },
+    "Outputs": {
+        "attach_predicted_depth/out0_0": {
+            "name": "attach_predicted_depth/out0",
+            "shape": [
+                1,
+                252,
+                336
+            ],
+            "format": "nchw",
+            "dtype": "float32"
+        }
+    },
+    "Recurrent_connections": {}
+}
